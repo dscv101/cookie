@@ -12,8 +12,8 @@ description: "Defines the standard toolchain and automation for Python 3.13 proj
 <rules>
   - `Formatter`: Use `Black` (`black --preview --line-length 100`) as the single-source-of-truth formatter. Never hand-edit style that Black can format.
   - `Linter & Import sorter`: Run `Ruff` (`ruff check` + `ruff format`) on every save; fail CI on any `E`, `F`, or `I` codes.
-  - `Static typing`: Use `Pyright` (`pyright --pythonversion 3.13 --strict`) with the `strict` preset; zero type errors in CI. Optionally run `mypy` in `--strict` mode for cross-validation.
-  - `Pre-commit`: Install a `pre-commit` config that runs Black, Ruff, Pyright, Commitlint, and Reuse on staged files.
+  - `Static typing`: Use `MyPy` (`mypy --pythonversion 3.13 --strict`) with the `strict` preset; zero type errors in CI. Optionally run `mypy` in `--strict` mode for cross-validation.
+  - `Pre-commit`: Install a `pre-commit` config that runs Black, Ruff, Mypy, Commitlint, and Reuse on staged files.
   - `Task runner`: Use `Hatch` tasks (`hatch run <task>`) for linting, test, docs, and release.
   - `Packaging & Environment`: Manage dependencies and virtual environments with `uv`:
     - Create isolated envs via `uv venv .venv`.
